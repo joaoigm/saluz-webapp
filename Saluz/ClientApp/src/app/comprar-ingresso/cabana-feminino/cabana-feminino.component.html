@@ -1,0 +1,32 @@
+<form class="row g3" (ngSubmit)="submit()">
+  <h2>Cabanas Feminino</h2>
+
+  <div class="cabanas">
+    <div class="col cabana" *ngFor="let cabana of cabanas">
+      <div class="col-12">
+        <label>Cabana {{cabana.id}}</label>
+      </div>
+      <div>
+        <div class="form-check form-check-inline" *ngFor="let vaga of cabana.vagas">
+          <input [(ngModel)]="cabanaEscolhida" name="cama" type="radio" class="form-check-input" [value]="{ cabanaId: cabana.id, vagaId: vaga.id }" [attr.disabled]="vaga.disponivel ? null : 'disabled'">
+          <label class="form-check-label">{{vaga.id}}</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label class="form-label">Nome</label>
+    <input class="form-control" type="text" name="nome" [(ngModel)]="nome">
+  </div>
+  <div class="col-6 mb-5">
+    <label class="form-label">Email</label>
+    <input class="form-control" type="email" name="email" [(ngModel)]="email">
+  </div>
+
+  <div class="col-6 mb-5">
+    <label class="form-label">Celular</label>
+    <input class="form-control" type="text" mask="(00) 00000-0000" name="celular" [(ngModel)]="celular">
+  </div>
+  <button type="submit" class="btn btn-success">Inscrever</button>
+</form>
