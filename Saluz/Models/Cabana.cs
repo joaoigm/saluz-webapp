@@ -9,6 +9,7 @@ namespace Saluz.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public string _Id { get; set; }
         public int Id { get; set; }
+        public string Genero { get; set; }
         [BsonRepresentation(BsonType.Array)]
         public Vaga[] Vagas { get; set; }
 

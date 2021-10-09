@@ -19,6 +19,7 @@ export class CabanasService {
 const CABANAS_MOCK: Cabanas = [
   {
     id: 1,
+    genero: 'M',
     vagas: [
       {
         id: 1,
@@ -32,6 +33,7 @@ const CABANAS_MOCK: Cabanas = [
   },
   {
     id: 2,
+    genero: 'M',
     vagas: [
       {
         id: 1,
@@ -45,6 +47,7 @@ const CABANAS_MOCK: Cabanas = [
   },
   {
     id: 3,
+    genero: 'M',
     vagas: [
       {
         id: 1,
@@ -58,6 +61,7 @@ const CABANAS_MOCK: Cabanas = [
   },
   {
     id: 4,
+    genero: 'M',
     vagas: [
       {
         id: 1,
@@ -71,6 +75,7 @@ const CABANAS_MOCK: Cabanas = [
   },
   {
     id: 5,
+    genero: 'M',
     vagas: [
       {
         id: 1,

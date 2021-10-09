@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
@@ -25,10 +25,16 @@ namespace Saluz.Controllers
             this._cabanas = database.GetCollection<Cabana>("cabanas");
         }
 
-        [HttpGet]
-        public IEnumerable<Cabana> Get()
+        [HttpGet("masculino")]
+        public async Task<IEnumerable<Cabana>> GetMasculino()
         {
-            return this._cabanas.Find(cabana => true).ToEnumerable();
+            return (await this._cabanas.FindAsync(cabana => cabana.Genero == "M")).ToEnumerable();
+        }
+
+        [HttpGet("feminino")]
+        public async Task<IEnumerable<Cabana>> GetFeminino()
+        {
+            return (await this._cabanas.FindAsync(cabana => cabana.Genero == "F")).ToEnumerable();
         }
     }
 }

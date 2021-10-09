@@ -1,3 +1,4 @@
+import { Camas } from './../../types/types';
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { AlojamentoService } from 'src/app/services/alojamento/alojamento.service';
@@ -10,6 +11,8 @@ import { Alojamento } from 'src/app/types/types';
 })
 export class AlojamentoFemininoComponent implements OnInit {
   alojamento?: Alojamento;
+  camasA: Camas;
+  camasB: Camas
 
   camaEscolhida: { id: number, tipo: ''} | undefined;
   nome = '';
@@ -24,6 +27,8 @@ export class AlojamentoFemininoComponent implements OnInit {
   }
   ngOnInit(): void {
     this.alojamento = this.alojamentoService.getAlojamentoFeminino();
+    this.camasA = this.alojamento.camas.filter(c => c.tipo === 'A');
+    this.camasB = this.alojamento.camas.filter(c => c.tipo === 'B');
 
   }
 

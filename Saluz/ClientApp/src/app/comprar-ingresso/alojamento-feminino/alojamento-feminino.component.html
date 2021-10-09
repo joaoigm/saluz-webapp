@@ -8,7 +8,7 @@
       <small>Camas que ficam na parte de baixo</small>
     </div>
     <div *ngIf="alojamento" class="camas">
-      <div class="form-check form-check-inline" *ngFor="let cama of alojamento.camaA">
+      <div class="form-check form-check-inline" *ngFor="let cama of camasA">
         <input [(ngModel)]="camaEscolhida" name="cama" type="radio" class="form-check-input" [value]="{ id: cama.id, tipo: 'A' }" [attr.disabled]="cama.disponivel ? null : 'disabled'">
         <label class="form-check-label">{{cama.id}}</label>
       </div>
@@ -25,7 +25,7 @@
       <small>Camas que ficam na parte de cima</small>
     </div>
     <div *ngIf="alojamento" class="camas">
-      <div class="form-check form-check-inline" *ngFor="let cama of alojamento.camaB">
+      <div class="form-check form-check-inline" *ngFor="let cama of camasB">
         <input [(ngModel)]="camaEscolhida" name="cama" type="radio" class="form-check-input" [attr.disabled]="cama.disponivel ? null : 'disabled'" [value]="{ id: cama.id, tipo: 'B' }">
         <label class="form-check-label">{{cama.id}}</label>
       </div>
