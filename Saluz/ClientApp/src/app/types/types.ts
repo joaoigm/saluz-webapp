@@ -6,21 +6,36 @@ export type Alojamento = {
 export type Camas = Cama[]
 
 export type Cama = {
-  id: number,
-  tipo: 'A' | 'B'
+  codigo: string,
   disponivel: boolean
 }
 
 
-export type Cabana = {
-  id: number
-  genero: 'M' | 'F'
+export type Barraca = {
+  codigo: string
+  genero: 'M' | 'F' | ''
   vagas: Vaga[]
 }
 
 export type Vaga = {
-  id: number
+  codigo: string
   disponivel: boolean
 }
 
-export type Cabanas = Cabana[]
+export type Barracas = Barraca[]
+
+
+export type FormularioInscricao = {
+  nome?: string,
+  igreja?: string,
+  idade?: string,
+  email?: string,
+  celular?: string,
+  sexo?: 'M' | 'F',
+  quantidadeParcelas?: number,
+  vencimento?: number,
+  dataPrimeiroPagamento?: string
+
+  acomodacaoEscolhida?: { camaId: string } | { barracaId: string, vagaId: string }
+
+}

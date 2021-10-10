@@ -1,4 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import { Alojamento } from 'src/app/types/types';
 
 @Injectable({
@@ -6,34 +9,66 @@ import { Alojamento } from 'src/app/types/types';
 })
 export class AlojamentoService {
 
-  constructor() {
+  constructor(
+    private http: HttpClient
+  ) {
     //
   }
 
-  getAlojamentoFeminino(): Alojamento {
-    return ALOJAMENTO_FEMININO_MOCK;
+  getAlojamentoFeminino(): Observable<Alojamento> {
+    return this.http.get<Alojamento[]>('/alojamento/feminino').pipe(
+      map(result => result[0])
+    );
+  }
+
+  getAlojamentoMasculino(): Observable<Alojamento> {
+    return this.http.get<Alojamento[]>('/alojamento/masculino').pipe(
+      map(result => result[0])
+    );
   }
 }
 
-const ALOJAMENTO_FEMININO_MOCK: Alojamento = {
+const ALOJAMENTO_FEMININO_MOCK: Alojamento[] = [{
   genero: 'F',
   camas: [
-    { id: 1, disponivel: true, tipo: 'A' },
-    { id: 2, disponivel: true, tipo: 'A' },
-    { id: 3, disponivel: true, tipo: 'A' },
-    { id: 4, disponivel: true, tipo: 'A' },
-    { id: 5, disponivel: true, tipo: 'A' },
-    { id: 6, disponivel: true, tipo: 'A' },
-    { id: 7, disponivel: true, tipo: 'A' },
-    { id: 8, disponivel: true, tipo: 'A' },
-    { id: 9, disponivel: true, tipo: 'A' },
-    { id: 1, disponivel: true  , tipo: 'B'},
-    { id: 2, disponivel: true  , tipo: 'B'},
-    { id: 3, disponivel: true  , tipo: 'B'},
-    { id: 4, disponivel: true  , tipo: 'B'},
-    { id: 5, disponivel: true  , tipo: 'B'},
-    { id: 6, disponivel: true  , tipo: 'B'},
-    { id: 7, disponivel: true  , tipo: 'B'},
-    { id: 8, disponivel: false , tipo: 'B' },
+    { codigo: "1", disponivel: true },
+    { codigo: "2", disponivel: true },
+    { codigo: "3", disponivel: true },
+    { codigo: "4", disponivel: true },
+    { codigo: "5", disponivel: true },
+    { codigo: "6", disponivel: true },
+    { codigo: "7", disponivel: false },
+    { codigo: "8", disponivel: false },
+    { codigo: "9", disponivel: false },
+    { codigo: "10", disponivel: true },
+    { codigo: "11", disponivel: true },
+    { codigo: "12", disponivel: true },
+    { codigo: "13", disponivel: true },
+    { codigo: "14", disponivel: true },
+    { codigo: "15", disponivel: true },
+    { codigo: "16", disponivel: true },
+    { codigo: "17", disponivel: false },
   ]
-};
+}, {
+  genero: 'M',
+  camas: [
+    { codigo: "1", disponivel: true },
+    { codigo: "2", disponivel: true },
+    { codigo: "3", disponivel: true },
+    { codigo: "4", disponivel: true },
+    { codigo: "5", disponivel: true },
+    { codigo: "6", disponivel: true },
+    { codigo: "7", disponivel: true },
+    { codigo: "8", disponivel: true },
+    { codigo: "9", disponivel: true },
+    { codigo: "10", disponivel: true },
+    { codigo: "11", disponivel: true },
+    { codigo: "12", disponivel: true },
+    { codigo: "13", disponivel: true },
+    { codigo: "14", disponivel: true },
+    { codigo: "15", disponivel: true },
+    { codigo: "16", disponivel: true },
+    { codigo: "17", disponivel: false },
+  ]
+}
+];

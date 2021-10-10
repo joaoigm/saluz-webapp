@@ -5,7 +5,7 @@ import { HomeComponent } from './home/home.component';
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    redirectTo: 'comprar-ingresso',
   },
   {
     path: 'comprar-ingresso',
@@ -14,6 +14,10 @@ const routes: Routes = [
         (m) => m.ComprarIngressoModule
       ),
   },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
 
 @NgModule({

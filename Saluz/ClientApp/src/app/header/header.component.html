@@ -1,23 +1,49 @@
 <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease"
   role="banner" class="nav-bar w-nav">
-  <div class="nav-top">
+  <div class="nav-top navbar-dark navbar-expand-lg">
     <div class="wrapper nav-top-wrapper">
       <div class="text-block">SALUZ</div>
-      <div class="nav-top-info"></div>
+      <button class="navbar-toggler" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
   </div>
   <div class="nav-top-menu">
     <div class="wrapper nav-top-wrapper">
       <div class="nav-top-info"></div>
-      <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="/" aria-current="page" class="nav-link w-nav-link">HOME</a>
-        <a href="#encontros-saluz" class="nav-link w-nav-link">ENCONTROS SALUZ</a>
-        <a href="#cultos-saluz" class="nav-link w-nav-link">CULTOS SALUZ</a>
-        <a href="#acampasaluz-2020" class="nav-link w-nav-link">ACAMPASALUZ 2020</a>
-        <a href="#preacampa2022" class="nav-link w-nav-link">PRÉ ACAMPA 2022</a>
-        <a href="#acampasaluz-2022" class="nav-link w-nav-link">ACAMPASALUZ 2022</a>
-        <a routerLink="/comprar-ingresso" aria-current="page" class="nav-link w-nav-link">COMPRE SEU INGRESSO</a>
-        <a href="#instagram" class="nav-link w-nav-link">INSTAGRAM</a>
+      <nav [ngbCollapse]="isNavbarCollapsed" role="navigation" class="collapse navbar-collapse w-nav-menu row" id="navbarsDefault">
+        <div class="col-12 col-lg-auto">
+          <a href="/" aria-current="page" class="nav-link w-nav-link">HOME</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a href="#encontros-saluz" class="nav-link w-nav-link">ENCONTROS SALUZ</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a href="#cultos-saluz" class="nav-link w-nav-link">CULTOS SALUZ</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a href="#acampasaluz-2020" class="nav-link w-nav-link">ACAMPASALUZ 2020</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a href="#preacampa2022" class="nav-link w-nav-link">PRÉ ACAMPA 2022</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a href="#acampasaluz-2022" class="nav-link w-nav-link">ACAMPASALUZ 2022</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a routerLink="/comprar-ingresso" aria-current="page" class="nav-link w-nav-link">COMPRE SEU INGRESSO</a>
+
+        </div>
+        <div class="col-12 col-lg-auto">
+          <a href="#instagram" class="nav-link w-nav-link">INSTAGRAM</a>
+
+        </div>
       </nav>
     </div>
   </div>

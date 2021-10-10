@@ -22,20 +22,22 @@ namespace Saluz.Controllers
             var settings = MongoClientSettings.FromConnectionString("mongodb+srv://saluzWebappUser:JkhmEYoZWjBf46h8@cluster0.rczf7.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
             var client = new MongoClient(settings);
             var database = client.GetDatabase("saluzWebapp");
-            this._alojamentos = database.GetCollection<Alojamento>("cabanas");
+            this._alojamentos = database.GetCollection<Alojamento>("alojamentos");
         }
 
         [HttpGet("feminino")]
-        public async Task<IEnumerable<Alojamento>> GetFeminino()
+        public IList<Alojamento> GetFeminino()
         {
-            return (await this._alojamentos.FindAsync(alojamento => alojamento.Genero == "F")).ToEnumerable();
+            var alojamentos = _alojamentos.Find(alojamento => alojamento.Genero == "F").ToList();
+            return alojamentos;
         }
 
         
         [HttpGet("masculino")]
-        public async Task<IEnumerable<Alojamento>> GetMasculino()
+        public IList<Alojamento> GetMasculino()
         {
-            return (await this._alojamentos.FindAsync(alojamento => alojamento.Genero == "M")).ToEnumerable();
+            var alojamentos = this._alojamentos.Find(alojamento => alojamento.Genero == "M").ToList();
+            return alojamentos;
         }
     }
 }

@@ -1,4 +1,82 @@
 .wf-section {
-    padding-top: 4vh;
+  padding-top: 4vh;
 }
 
+form {
+  padding: 4vw;
+  border: 2px solid darkgray;
+  background-color: white;
+  color: black;
+  border-radius: 50px;
+  margin: 2vw;
+}
+
+.alojamento {
+  display: flex;
+  flex-direction: row;
+}
+
+hr {
+  margin-top: 1.5vh;
+  margin-bottom: 1.5vh;
+}
+
+.barracas {
+
+  margin-bottom: 25px;
+
+  .barraca {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 12px;
+    padding: 10px;
+
+    border-radius: 20px;
+    border: 3px solid darkgrey;
+
+    .vagas {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+}
+
+.label-checkbox {
+  display: inline-block;
+  width: 4vh;
+  height: 4vh;
+  text-align: center;
+  border: 1px solid #ddd;
+  line-height: 30px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0.5em
+}
+
+.disponivel {
+  background-color: green;
+}
+
+.escolhido {
+  background-color: red;
+}
+
+.indisponivel {
+  background-color: grey;
+}
+
+hr {
+  color: black;
+}
+
+// input[type="checkbox"] {
+//   display: none;
+// }
+
+.dados-pagamento {
+  margin-top: 20px;
+}

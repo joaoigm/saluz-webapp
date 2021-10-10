@@ -1,24 +1,18 @@
-import { NgxMaskModule } from 'ngx-mask';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RouterModule } from '@angular/router';
-import { AlojamentoFemininoComponent } from './alojamento-feminino/alojamento-feminino.component';
-import { AlojamentoMasculinoComponent } from './alojamento-masculino/alojamento-masculino.component';
-import { CabanaFemininoComponent } from './cabana-feminino/cabana-feminino.component';
-import { CabanaMasculinoComponent } from './cabana-masculino/cabana-masculino.component';
+import { NgxMaskModule } from 'ngx-mask';
 import { ComprarIngressoRoutingModule } from './comprar-ingresso-routing.module';
 import { ComprarIngressoComponent } from './comprar-ingresso.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @NgModule({
   declarations: [
-    ComprarIngressoComponent,
-    CabanaMasculinoComponent,
-    CabanaFemininoComponent,
-    AlojamentoMasculinoComponent,
-    AlojamentoFemininoComponent
+    ComprarIngressoComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +20,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ComprarIngressoRoutingModule,
     NgxMaskModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule,
+    MatProgressSpinnerModule
   ]
 })
 export class ComprarIngressoModule { }
