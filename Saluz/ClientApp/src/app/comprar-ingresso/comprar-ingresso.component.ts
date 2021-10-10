@@ -43,10 +43,10 @@ export class ComprarIngressoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const jaSeInscreveu = localStorage.getItem('jaInscrito');
-    if(jaSeInscreveu) {
-      this.jaInscrito = true;
-    }
+    // const jaSeInscreveu = localStorage.getItem('jaInscrito');
+    // if(jaSeInscreveu) {
+    //   this.jaInscrito = true;
+    // }
   }
 
   submit(): void {
