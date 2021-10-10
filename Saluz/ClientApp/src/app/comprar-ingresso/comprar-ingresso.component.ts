@@ -27,6 +27,7 @@ export class ComprarIngressoComponent implements OnInit {
     sexo: undefined,
     vencimento: undefined
   }
+  escolheuUmaParcela = false;
   passo = 1;
   camasDisponiveis: Cama[];
   barracas: Barracas;
@@ -146,6 +147,16 @@ export class ComprarIngressoComponent implements OnInit {
 
   abaMudou(_: MatTabChangeEvent): void {
     this.limparSelecionados();
+  }
+
+  verificarEscolhaParcelas(event): void {
+    if(event.target.value === '1') {
+      this.escolheuUmaParcela = true;
+      this.inscricao.vencimento = 1;
+    } else {
+      this.escolheuUmaParcela = false;
+      this.inscricao.vencimento = undefined;
+    }
   }
 
   limparSelecionados() {

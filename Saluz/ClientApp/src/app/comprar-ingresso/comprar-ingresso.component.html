@@ -78,7 +78,7 @@
 
         <div class="col-lg-3 col-12">
           <label class="form-label">Quantidade de Parcelas</label>
-          <select class="form-select" name="parcelas" [(ngModel)]="inscricao.quantidadeParcelas">
+          <select class="form-select" name="parcelas" [(ngModel)]="inscricao.quantidadeParcelas" (change)="verificarEscolhaParcelas($event)">
             <option value="1">1 de R$ 250,00</option>
             <option value="2">2 de R$ 125,00</option>
             <!-- <option value="3"></option> -->
@@ -94,7 +94,7 @@
 
         <div class="col-lg-3 col-6">
           <label class="form-label">Parcelas Mensais</label>
-          <select class="form-select" name="vencimento" [(ngModel)]="inscricao.vencimento">
+          <select class="form-select" name="vencimento" [(ngModel)]="inscricao.vencimento" [disabled]="escolheuUmaParcela">
             <option value="1">dia 1</option>
             <option value="2">dia 2</option>
             <option value="3">dia 3</option>
