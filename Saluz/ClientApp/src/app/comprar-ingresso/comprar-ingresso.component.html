@@ -1,13 +1,16 @@
 <div class="wf-section">
   <div class="container-2 w-container">
-    <div *ngIf="isLoading" style="display: flex; flex-direction: row; justify-content: center;">
+    <div *ngIf="jaInscrito" style="display: flex; justify-content: center; color: #fff">
+      <h1>Você já se inscreveu para o acampamento Saluz 2022</h1>
+    </div>
+    <div *ngIf="isLoading && !jaInscrito" style="display: flex; flex-direction: row; justify-content: center;">
       <mat-spinner>
       </mat-spinner>
     </div>
-    <form *ngIf="!isLoading" class="row g3" (ngSubmit)="submit()">
+    <form *ngIf="!isLoading && !jaInscrito" class="row g3" (ngSubmit)="submit()">
 
       <!-- Passo 1 -->
-      <ng-container *ngIf="passo === 1">
+      <ng-container *ngIf="passo === 1 && !jaInscrito">
         <h1>Dados do Participante</h1>
         <div class="col-lg-6 col-12 mb-3">
           <label class="form-label">Nome Completo</label>
@@ -115,7 +118,7 @@
       </ng-container>
 
        <!-- Passo 2 -->
-      <ng-container *ngIf="passo === 2">
+      <ng-container *ngIf="passo === 2 && !jaInscrito">
         <mat-tab-group mat-stretch-tabs dynamicHeight (selectedTabChange)="abaMudou($event)">
           <mat-tab label="ALOJAMENTO">
             <div class="alojamento mt-2 row">
@@ -160,7 +163,7 @@
       </ng-container>
 
        <!-- Passo 3 -->
-       <ng-container *ngIf="passo === 3">
+       <ng-container *ngIf="passo === 3 && !jaInscrito">
         <div style="display: flex; flex-direction: column;">
           <img [src]="pegarCodigoInscricao()" class="img-fluid">
           <a [href]="pegarCodigoInscricao()" download="ingresso.png">Link para Download do ingresso</a>

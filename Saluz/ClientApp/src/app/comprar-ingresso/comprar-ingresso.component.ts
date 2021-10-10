@@ -15,6 +15,7 @@ import { finalize } from 'rxjs/operators';
 })
 export class ComprarIngressoComponent implements OnInit {
   isLoading = false;
+  jaInscrito = false;
   inscricao: FormularioInscricao = {
     acomodacaoEscolhida: undefined,
     nome: undefined,
@@ -42,7 +43,10 @@ export class ComprarIngressoComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    //
+    const jaSeInscreveu = localStorage.getItem('jaInscrito');
+    if(jaSeInscreveu) {
+      this.jaInscrito = true;
+    }
   }
 
   submit(): void {
@@ -66,6 +70,7 @@ export class ComprarIngressoComponent implements OnInit {
         this.toastr.success('Inscrição realizada com sucesso');
         this.toastr.success('Salve a imagem do seu ingresso. Sem ela, você não poderá entrar no sítio', undefined, {timeOut: 10000});
         this.passo = 3;
+        localStorage.setItem('jaInscrito','true');
       },
       _ => {
         this.toastr.error('Ocorreu um erro ao relizar sua inscrição. Tente novamente mais tarde');
