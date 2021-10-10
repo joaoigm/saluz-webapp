@@ -12,6 +12,7 @@ namespace Saluz.Models
         public string idade { get; set; }
         public string email { get; set; }
         public string quantidadeParcelas { get; set; }
+        public string dataPrimeiroPagamento { get; set; }
         public string sexo { get; set; }
         public string vencimento { get; set; }
         public string tipo { get; set; }

@@ -152,7 +152,7 @@ export class ComprarIngressoComponent implements OnInit {
   verificarEscolhaParcelas(event): void {
     if(event.target.value === '1') {
       this.escolheuUmaParcela = true;
-      this.inscricao.vencimento = 1;
+      this.inscricao.vencimento = '1';
     } else {
       this.escolheuUmaParcela = false;
       this.inscricao.vencimento = undefined;

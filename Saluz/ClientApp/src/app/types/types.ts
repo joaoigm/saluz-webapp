@@ -32,8 +32,8 @@ export type FormularioInscricao = {
   email?: string,
   celular?: string,
   sexo?: 'M' | 'F',
-  quantidadeParcelas?: number,
-  vencimento?: number,
+  quantidadeParcelas?: string,
+  vencimento?: string,
   dataPrimeiroPagamento?: string
 
   acomodacaoEscolhida?: { camaId: string } | { barracaId: string, vagaId: string }
